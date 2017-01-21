@@ -59,29 +59,17 @@ def path_define (x1,x2):
 def distance (p1,p2):
     x1,y1=p1
     x2,y2=p2
-    xd1 = x1*50
-    xd2= x2*50
-    yd1= y1*50
-    yd2= y2*50
     im = Image.open('GroceryStoreFinal.jpg')#Draw line
     draw = ImageDraw.Draw(im)
     if (y1==y2): #horizental motion
         dist= abs(x1-x2)
-        draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
-        im.show()
     elif (x1==x2 and (x1==1 or x1==5) ): # vertical motion
         #this code could be optimized to consider case for a bigger number but for simiplicty we consider the base case only
         dist = abs(y1-y2)
-        draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
-        im.show()
     elif (path_define(x1,x2)==1):#left path
         dist = (x1+x2-2)+ abs (y1-y2)
-        draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
-        im.show()
     elif (path_define(x1,x2)==0): #right path
         dist = (10-x1-x2)+ abs (y1-y2)
-        draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
-        im.show()
     return dist
 
 
@@ -104,6 +92,15 @@ def shortest_path (mylist):
 
     return mylist[0:1]+shortest_path(mylist[1:])
 print(shortest_path([(5,1),(3,3),(4,1),(1,2)]))
+
+def draw_graph(mylist)
+    for i in range(len(mylist)):
+        
+draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
+
+
+
+im.show()
 
 
 list=[1,2,3,4]
