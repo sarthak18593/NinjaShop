@@ -1,4 +1,10 @@
 
+# coding: utf-8
+
+# In[6]:
+
+# %load Ninja_DB.py
+
 import pymongo
 from PIL import Image, ImageDraw
 
@@ -59,8 +65,6 @@ def path_define (x1,x2):
 def distance (p1,p2):
     x1,y1=p1
     x2,y2=p2
-    im = Image.open('GroceryStoreFinal.jpg')#Draw line
-    draw = ImageDraw.Draw(im)
     if (y1==y2): #horizental motion
         dist= abs(x1-x2)
     elif (x1==x2 and (x1==1 or x1==5) ): # vertical motion
@@ -93,16 +97,46 @@ def shortest_path (mylist):
     return mylist[0:1]+shortest_path(mylist[1:])
 print(shortest_path([(5,1),(3,3),(4,1),(1,2)]))
 
-def draw_graph(mylist)
+
+
+
+
+
+# In[7]:
+
+def draw_line(a,b):
+    x1,y1=a
+    x2,y2=b
+    xd1=x1*50
+    yd1=y1*50
+    xd2=x2*50
+    yd1=y2*50
+    im = Image.open('GroceryStoreFinal.jpg')#Draw line
+    draw = ImageDraw.Draw(im)
+    if (y1==y2): #horizental motion
+        draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
+    elif (x1==x2 and (x1==1 or x1==5) ): # vertical motion
+        #this code could be optimized to consider case for a bigger number but for simiplicty we consider the base case only
+        draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
+    elif (path_define(x1,x2)==1):#left path
+        draw.line((xd1,yd1, 50,yd1), fill=100,width=10)
+        draw.line((50,yd1, 50,yd2), fill=100,width=10)
+        draw.line((50,yd2, xd2,yd1), fill=100,width=10)
+    elif (path_define(x1,x2)==0): #right path
+        draw.line((xd1,yd1, 250,yd1), fill=100,width=10)
+        draw.line((250,yd1, 250,yd2), fill=100,width=10)
+        draw.line((250,yd2, xd2,yd1), fill=100,width=10)
+
+
+# In[8]:
+
+def draw_graph(mylist):
     for i in range(len(mylist)):
-        
-draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
+        draw_line(mylist[i],mylist[i+1])
+    im.show()
+
+
+# In[ ]:
 
 
 
-im.show()
-
-
-list=[1,2,3,4]
-print(list[2:3])
-print(list+list[2:3])
