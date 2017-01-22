@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Grayscale - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="javascript">
+
+      function addItem(){ 
+        var newitem;
+        newitem = $("#b").value;
+        console.log(newitem)
+         $("#shopping-list").append("<li>" + itemName + "</li>");
+      }
+    </script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!--
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Shopping!
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+       
+    </nav>
+   -->
+
+<div class="container" style="width: 550px; height: 10px;">
+
+<script>
+
+      function addItem(){ 
+        var newitem;
+        newitem = $("#b").val();
+        console.log(newitem)
+         $("#shopping-list").append("<li>" + newitem + "</li>");
+      }
+
+  $( function() {
+    var availableTags = [
+      "Apples",
+      "C",
+      "C++",,
+      "Fruits",
+      "ColdFusion",
+      "Vegetables",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    //$( "#tags" ).autocomplete({
+      //source: availableTags
+    //});
+  } );
+  </script>
+
+  <div class="ui-widget">
+  
+</div>
+
+
+<!--<form id = "form1">
+item name: <input type="text" name="itemName" id="newItem" ></input>
+</form>
+-->
+<!--<button onclick="addItem($("#newItem").value)">Add Item</button>-->
+
+<span class="scrollup"></span>
+<div class="panel panel-primary">
+    <form>
+    <!-- <label for="tags" id = "newItem">Item: </label> -->
+    <input id="b" type="text" style="color: red" placeholder="Enter something.">
+  </form>
+  <button onclick="addItem()">Add Item</button>
+  <div class="panel-heading">
+    <h3 class="panel-title">Item list</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group" id ="shopping-list" style="color: #009">
+  <!--<li class="list-group-item">Apples</li>
+  <li class="list-group-item">Bananas</li>
+  <li class="list-group-item">Cereal</li>
+  <li class="list-group-item">Milk</li>
+  <li class="list-group-item">Chips</li>
+  <li class="list-group-item">Vegetables</li>
+  <li class="list-group-item">Snacks</li>
+  <li class="list-group-item">Cookies</li>
+  <li class="list-group-item">Drinks</li>-->
+</ul>
+
+  </div>
+    </div>
+    </div>
+        </div>
+        </div>
+</body>
+</html>

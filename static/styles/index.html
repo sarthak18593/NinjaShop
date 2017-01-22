@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Grayscale - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!--<div class = "page-header no-padding no-margin">
+    <div class = "container">
+    <img src="finalninja.png" class="img-responsive">
+    </div>
+</div>-->
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Shopping!
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">NinjaShop</h1>
+                        <p class="intro-text">A quick and easy way to navigate your shop of choice.
+                            <br>Created by NinjaTech.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About NinjaShop</h2>
+                <p>NinjaShop is a free web application created by 4 college students, Amer Alsabbagah, Sarthak Anand, Achintya Ram, and Rajiv Samagond at BoilerMake 2017. It is designed to allow customers to save time and effort during a shopping spree by being able to input their desired list of items and follow an optimal path through the shop.</p>
+                <p>NinjaShop is partnered with several malls, grocery stores, and retailers around the United States, including Jewel Osco, Costco, and Walmart.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Download NinjaShop</h2>
+                    <p>You can download NinjaShop for free on the page below.</p>
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact NinjaShop</h2>
+                <p>If you have any questions or concerns, don't hesitate to email us to provide some feedback on our app, as well as any suggestions for new integrations and themes, or to just say hello!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@ninjatech.com</a>
+                </p>
+                <p>To get started with your ninja-fast shopping session, begin by entering your list of desired items below! </p>
+
+                <!--/Adding the list to this section instead!-->
+
+                <script type="javascript">
+
+      function addItem(){ 
+        var newitem;
+        newitem = $("#b").value;
+        console.log(newitem)
+         $("#shopping-list").append("<li>" + itemName + "</li>");
+      }
+    </script>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<div class="container" style="width: 550px; height: 10px;">
+
+<script>
+
+      function addItem(){ 
+        var newitem;
+        newitem = $("#b").val();
+        console.log(newitem)
+         $("#shopping-list").append("<li>" + newitem + "</li>");
+      }
+
+  $( function() {
+    var availableTags = [
+      "Apples",
+      "C",
+      "C++",,
+      "Fruits",
+      "ColdFusion",
+      "Vegetables",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    //$( "#tags" ).autocomplete({
+      //source: availableTags
+    //});
+  } );
+  </script>
+
+  <div class="ui-widget">
+  
+</div>
+
+
+<!--<form id = "form1">
+item name: <input type="text" name="itemName" id="newItem" ></input>
+</form>
+-->
+<!--<button onclick="addItem($("#newItem").value)">Add Item</button>-->
+
+<span class="scrollup"></span>
+<div class="panel panel-primary">
+    <form>
+    <!-- <label for="tags" id = "newItem">Item: </label> -->
+    <input id="b" type="text" style="color: red" placeholder="Enter something.">
+  </form>
+  <button onclick="addItem()">Add Item</button>
+  <div class="panel-heading">
+    <h3 class="panel-title">Item list</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group" id ="shopping-list" style="color: #009">
+  <!--<li class="list-group-item">Apples</li>
+  <li class="list-group-item">Bananas</li>
+  <li class="list-group-item">Cereal</li>
+  <li class="list-group-item">Milk</li>
+  <li class="list-group-item">Chips</li>
+  <li class="list-group-item">Vegetables</li>
+  <li class="list-group-item">Snacks</li>
+  <li class="list-group-item">Cookies</li>
+  <li class="list-group-item">Drinks</li>-->
+</ul>
+
+  </div>
+    </div>
+    </div>
+        </div>
+        </div>
+
+
+
+
+            <!--End of new added section!-->
+
+
+
+
+                <!--<ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                    </li>
+                </ul>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+
+    <div id="map"></div>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; www.ninjashop.com 2016</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.min.js"></script>
+
+</body>
+
+</html>
