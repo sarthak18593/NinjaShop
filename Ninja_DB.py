@@ -144,7 +144,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def lists(list1):
+def lis():
    return render_template('hello.html', name = list1)
 
 if __name__ == '__main__':
