@@ -1,9 +1,10 @@
 
 # coding: utf-8
 
-# In[6]:
+# In[55]:
 
 # %load Ninja_DB.py
+
 
 import pymongo
 from PIL import Image, ImageDraw
@@ -23,7 +24,7 @@ posts = db.posts
 post = [{"item": "Coconut Milk","section": "Canned & Packaged Foods", "X":4, "Y":1 ,"Aisle":"A","Shelf":"1"},
         {"item": "Baguette/French Bread","section": "Bakery, Breakfast, Cereal", "X":2, "Y":2 ,"Aisle":"B","Shelf":"3"},
         {"item": "Frozen Fruit","section": "Frozen Foods", "X":3, "Y":3 ,"Aisle":"C","Shelf":"1"},
-        {"item": "Produce","section": "Apples, Gala, bag", "X":3, "Y":4 ,"Aisle":"D","Shelf":"2"},
+        {"item": "Apples, Gala, bag","section": "Produce", "X":3, "Y":4 ,"Aisle":"D","Shelf":"2"},
         {"item": "Beef Stew Meat","section": "Refrigerated Foods", "X":2, "Y":5 ,"Aisle":"E","Shelf":"1"},
         {"item": "Aluminum Foil","section": "Miscellaneous Kitchen Items", "X":4, "Y":6 ,"Aisle":"E","Shelf":"1"},
         {"item": "Milk","section": "Beverages", "X":4, "Y":7 ,"Aisle":"F","Shelf":"2"},
@@ -33,14 +34,6 @@ post = [{"item": "Coconut Milk","section": "Canned & Packaged Foods", "X":4, "Y"
 
 
 result= posts.insert_many(post)
-
-import pprint
-
-
-pprint.pprint(posts.find_one({"item": "Yellow Mustard"}))
-
-
-posts.find_one({"item": "Coconut Milk"})["X"]
 
 def get_coordinates (item_names):
     x_list = []
@@ -95,11 +88,10 @@ def shortest_path (mylist):
     mylist[1], mylist[x+1]=distlist[x][0],mylist[1]
 
     return mylist[0:1]+shortest_path(mylist[1:])
-print(shortest_path([(5,1),(3,3),(4,1),(1,2)]))
 
 
-
-
+im = Image.open('GroceryStoreFinal.jpg')#Draw line
+draw = ImageDraw.Draw(im)
 
 
 # In[7]:
@@ -107,36 +99,53 @@ print(shortest_path([(5,1),(3,3),(4,1),(1,2)]))
 def draw_line(a,b):
     x1,y1=a
     x2,y2=b
-    xd1=x1*50
+    xd1=x1*65
     yd1=y1*50
-    xd2=x2*50
-    yd1=y2*50
-    im = Image.open('GroceryStoreFinal.jpg')#Draw line
-    draw = ImageDraw.Draw(im)
+    xd2=x2*65
+    yd2=y2*50
+
     if (y1==y2): #horizental motion
-        draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
+        draw.line((yd1,xd1, yd2,xd2), fill=100,width=10)
     elif (x1==x2 and (x1==1 or x1==5) ): # vertical motion
         #this code could be optimized to consider case for a bigger number but for simiplicty we consider the base case only
         draw.line((xd1,yd1, xd2,yd2), fill=100,width=10)
     elif (path_define(x1,x2)==1):#left path
-        draw.line((xd1,yd1, 50,yd1), fill=100,width=10)
-        draw.line((50,yd1, 50,yd2), fill=100,width=10)
-        draw.line((50,yd2, xd2,yd1), fill=100,width=10)
+        draw.line((yd1,xd1, yd1,65), fill=100,width=10)
+        draw.line((yd1,65,yd2,65), fill=100,width=10)
+        draw.line((yd2,65 ,yd2,xd2), fill=100,width=10)
     elif (path_define(x1,x2)==0): #right path
-        draw.line((xd1,yd1, 250,yd1), fill=100,width=10)
-        draw.line((250,yd1, 250,yd2), fill=100,width=10)
-        draw.line((250,yd2, xd2,yd1), fill=100,width=10)
+        draw.line((yd1,xd1,yd1,325), fill=100,width=10)
+        draw.line((yd1,325,yd2,325), fill=100,width=10)
+        draw.line((yd2,325, yd2,xd2), fill=100,width=10)
 
 
 # In[8]:
 
 def draw_graph(mylist):
-    for i in range(len(mylist)):
+    for i in range(len(mylist)-1):
         draw_line(mylist[i],mylist[i+1])
-    im.show()
-
 
 # In[ ]:
 
+samplist = ['Apples, Gala, bag','Baguette/French Bread','Coconut Milk','Salad Dressing','White Bread/Toast, enriched','Milk']
+# In[ ]:
+samplistlist = get_coordinates(samplist)
+print(samplistlist)
+list1 = shortest_path(samplistlist)
+print(list1)
+listy=[(5,1)]
+listyyyy= listy+list1
+print(listyyyy)
+draw_graph(listyyyy)
 
+im.show()
 
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+def lists(list1):
+   return render_template('hello.html', name = list1)
+
+if __name__ == '__main__':
+   app.run(debug = True)
